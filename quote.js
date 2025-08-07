@@ -19,6 +19,28 @@ fetch('https://mgungorchamp.github.io/mycat/quotes.json')
         console.error(err); // Print the actual error to the console for debugging
     });
 
+
+
+// This function picks a random quote and updates the text on the page
+function showRandomQuote() {
+    if (quotes.length === 0) return; // Just in case we don't have any quotes yet 
+
+    // Pick a random index between 0 and quotes.length - 1 - GIVEN
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+
+    // Get the quote object from the array
+    const selected = quotes[randomIndex];
+
+    // Update the page with the quote and author
+    quoteText.textContent = selected.text;
+    quoteAuthor.textContent = selected.author ? `— ${selected.author}` : '';
+}
+
+// When the button is clicked, call the function to show a new random quote
+button.addEventListener('click', showRandomQuote);
+
+
+
 // This function picks a random quote and updates the text on the page
 function showRandomQuote() {
     // add if quotes.length zero just return // Just in case we don't have any quotes yet 
@@ -32,6 +54,13 @@ function showRandomQuote() {
 
 
     // Update the page with the quote and author
+
+
+      // Update the page with the quote and author
+    quoteText.textContent = selected.text;
+
+    quoteAuthor.textContent = selected.author ? `— ${selected.author}` : '';
+}
 
     // quoteText  textContent 
     quoteText.textContent = selected.text;
