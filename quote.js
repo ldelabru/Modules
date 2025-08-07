@@ -67,6 +67,10 @@ function showRandomQuote() {
 
     // quoteAuthor textContent
     quoteAuthor.textContent = selected.author ? `— ${selected.author}` : '';
+
+        quoteText.textContent = selected.text ? `— ${selected.text}` : '';
+
+
 }
 
 // When the button is clicked, call the function to show a new random quote
